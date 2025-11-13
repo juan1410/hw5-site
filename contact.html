@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <!-- <style>
+    body {
+      border: 2px solid black;
+    }
+  </style> -->
+</head>
+
+<body>
+
+  <header id="nav-bar">
+    <nav>
+        <input type="checkbox" id="menu" />
+        <p id="logo">
+            <a href="index.html">Juan Perez</a>
+            <label for="menu"></label>
+        </p>
+        <ul class="items">
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <!-- <li><a href="achievements.html">Achievements</a></li> -->
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact">
+        <header>
+          <h1 class="content-title">Let's Connect</h1>
+          <h2>Feel free to contact me for any questions or collaborations. Thanks for checking my website out!</h2>
+        </header>
+
+        <picture>
+            <source srcset="images/me2.jpg" media="(max-width: 100px)">
+            <img src="contact-image.JPG" alt="Photo of Me">
+        </picture>
+
+        <button type="button">Contact Me</button>
+
+        <dialog>
+          <form method="dialog">
+            <fieldset>
+              <legend>Send a Message</legend>
+              
+              <label for="name">Your Name:</label><br>
+              <input type="text" id="name" name="name" placeholder="Enter name"><br><br>
+              
+              <label for="email">Your Email:</label><br>
+              <input type="email" id="email" name="email" placeholder="Enter email"><br><br>
+              
+              <label for="message">Your Message:</label><br>
+              <textarea id="message" name="message" rows="5" cols="30" placeholder="Enter message"></textarea><br><br>
+              
+              <button type="submit">Send</button>
+              <button type="button">Close</button>
+            </fieldset>
+          </form>
+        </dialog>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Juan Perez</p>
+    <nav>
+      <ul>
+        <li><a href="tel:+12132655895">Phone</a></li>
+        <li><a href="mailto:juanph.1404@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/juan-perez-1a2382391" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/juan1410" target="_blank">GitHub</a></li>
+        <li><a href="https://instagram.com/juan.p_14" target="_blank">Instagram</a></li>
+      </ul>
+    </nav>
+  </footer>
+  
+</body>
+</html>

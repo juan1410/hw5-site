@@ -1,0 +1,663 @@
+/* Used CSS property to define a custom variable*/
+@property --main-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: rgb(0,20,50);
+}
+
+:root {
+    --main-padding: 1rem;
+    --main-font: 'Merriweather';   /*custom font imported */
+    --second-color: color(display-p3 0.70 0.88 0.98);                /* custom color using wider gamut color */
+    --third-color: color-mix(in srgb, green 70%, black 30%);
+  }
+
+/* CSS animation */
+@keyframes fadeInDown {
+from {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+main,footer{
+    animation: fadeInDown 1s ease-in-out;
+}
+html{
+    background: var(--main-color, blue);
+}
+#nav-bar{
+    /* background: green; */
+    padding: 0 var(--main-padding, 0); 
+    border-bottom-color: white; 
+    border-bottom-style: solid;
+}
+body{
+    /* background: red; */
+    font-family: serif;
+    margin: 0;
+    padding: 0;
+}
+p{
+    color:rgb(161, 158, 158);
+    font-family: var(--fallback-font);
+}
+h1, h2, h3{
+    color: lightgrey;
+    font-family: var(--main-font, var(--fallback-font));
+}
+a{
+    /* background: red; */
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    width: 100px;
+    padding: 16px;
+    border-radius: 10mm; 
+    transition: color 0.3s ease;
+}
+a:hover{
+    text-align: center;
+    color: var(--third-color, darkgreen);
+}
+ul, ol{
+    list-style:none;
+    /* transition: color 10s ease; */
+
+}
+img{
+    background: var(--third-color, darkgreen);
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+    color:white;
+}
+nav:has(ul){    /* used has selector */
+    width: 100%;
+    box-sizing: border-box;
+    /* background: rgb(0, 20, 50); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* transition: color 10s ease; */
+}
+#logo {
+    z-index: 1000;
+    width: fit-content;
+    font-size: 32px;
+    color: white;
+    font-weight: 600;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+#logo a{
+    font-size: 32px;
+    padding: 0;
+    width: fit-content;
+}
+#logo label{
+    z-index: 1000;
+    display:none;
+}
+#menu{
+    display: none;
+}
+nav ul{
+    /* position:fixed; */
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: color 1s ease; */
+}
+
+#intro-layout {
+    display: grid;
+    place-items: center;   
+    min-height: 60dvh;   
+}
+  
+#intro {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    text-align: center;
+    /* background: var(--second-color, lightblue); */
+    padding: 4rem;
+}
+  
+#profile-image img {
+    display: block;
+    background: var(--third-color, darkgreen);
+    width: 350px;
+    height: 350px;
+    /* object-fit: cover; */
+    border-radius: 50%;
+    margin-bottom: 5rem;
+}
+
+#message span{
+    color: var(--third-color, darkgreen);
+}
+
+
+
+/* About page */
+main header{
+    /* background: blue; */
+    padding: 2rem var(--main-padding, 0);
+    margin: 4rem var(--main-padding, 0);
+}
+.content-title{
+    color: var(--second-color, lightblue);
+    /* color: color-mix(in srgb, green 70%, black 30%); */
+    margin: 0;
+    font-size: 8dvw;
+}
+#about{
+    /* background: blue; */
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    /* height: 100dvh */
+}
+@scope (#about){
+    header{
+        /* background: red; */
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    profile-card{
+        /* background: green; */
+        grid-column: 1/2;
+        grid-row: 2/3;
+        display: block;
+        padding: 0 var(--main-padding, 0);
+        margin: 0 var(--main-padding, 0);
+        color: white;
+        height: fit-content;
+        width: 50dvw;
+    }
+    figure{
+        grid-column: 2/3;
+        grid-row: 1/3;
+        display: block;
+        /* background: green; */
+        padding: 0;
+        display: grid;
+        height: fit-content;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 6fr
+    }
+    #about-image figcaption{
+        /* background: green; */
+        color: white;
+        font-size: 20px;
+        padding: var(--main-padding, 0) 0;
+        margin: 0.5rem 0;
+    }
+    #about-image picture{
+        /* background: green; */
+        /* border-radius: 50%; */
+        /* height: 70dvh; */
+    }
+}
+
+
+/* Skills page */
+#skills{
+    /* background: blue; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    height: 100dvh;
+}
+#skills header{
+    grid-row: 1/2;
+    grid-column: 1/3;
+    /* background: green; */
+    margin: 0;
+    text-align: left;
+}
+@scope (#skills){
+    h1{
+        font-size: 5dvw;
+    }
+    h2{
+        margin: var(--main-padding, 0);
+        font-size: 2dvw;
+    }
+    h3{
+        font-size: 1.5dvw;
+    }
+    div:has(ul){                /* used has selector for div */
+        /* background:red; */
+        text-align: center;
+        margin: 0 0 4rem;
+        color: lightgrey;
+        
+        ul{
+            /* background: green; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            li{
+                /* background: red; */
+                justify-content: center;
+                margin: var(--main-padding, 0);
+            }
+        }
+    }
+    #soft-skills{
+        /* background: blue; */
+    }
+    #language-proficiency{
+        /* background: green; */
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        h3{
+            grid-row: 1/6;
+            grid-column: 1/2;
+            /* background: red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        i{
+            margin: 3rem;
+        }
+    }
+    #tools-and-technologies{
+        /* background: red; */
+        text-align: center;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        place-items: center;
+
+        h3{
+            grid-row: 1/2;
+            grid-column: 1/3;
+        }
+
+        figure{
+            display: block;
+            /* background: red; */
+            width: 100px;
+            height: 100px;
+            /* object-fit: cover; */
+            border-radius: 50%;
+        }
+        figcaption{
+            /* background: red; */
+            margin: 0.5rem;
+        }
+
+        img{
+            display:block;
+            background: var(--third-color, darkgreen);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /* object-fit: cover; */
+        }
+        figcaption{
+            color:lightgrey;
+        }
+    }
+
+}
+
+
+
+/* Projects page */
+#projects{
+    /* background: red; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+    grid-template-rows: auto 1fr;
+}
+#projects header{
+    /* background: green; */
+    grid-row: 1/2;
+    grid-column: 1/3;
+    margin: 0;
+    text-align: center;
+}
+
+@scope (#projects){
+    article{
+        /* background: red; */
+        padding: 0.5rem;
+        margin: var(--main-padding, 0) 0 2rem;
+        align-items: center;
+        text-align: center;
+        border: 4px solid var(--second-color, lightblue);;
+        border-radius: 2%;
+        justify-self: center;
+    }
+    article h3{
+        /* background: red; */
+        color: var(--second-color, lightblue);
+    }
+    article p{
+        /* background: red; */
+        color: white;
+    }
+    article:hover{
+        transform: scale(1.05); 
+        display:block;
+        background: var(--second-color, lightblue);
+        color: black;
+    }
+    article:hover h3{
+        color: rgb(0, 20, 50);
+    }
+    article:hover p{
+        color: rgb(0, 20, 50);
+    }
+}
+
+
+
+/* Contact page */
+#contact{
+    display:grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: auto;
+}
+@scope (#contact){
+    header{
+        /* background: green; */
+        h1{
+            padding: 0 2rem;
+        }
+        h2{
+            padding: 0;
+            margin-bottom: 0;
+            text-align: center;
+        }
+    }
+    button{
+        grid-row: 2/3;
+        grid-column: 1/3;
+        background: var(--main-color, blue);
+        cursor: pointer;
+        margin-bottom: 2rem;
+        padding: 0.5rem;
+        width: fit-content;
+        /* display: flex; */
+        justify-self: center;
+        border-radius: 1mm;
+        border-color: var(--second-color, lightblue);
+        color: white;
+    }
+    button:hover{
+        background: var(--second-color, lightblue);
+        color: var(--main-color, blue);
+    }
+    picture{
+        /* background: red; */
+        /* border-radius: 50%; */
+        margin: 3rem 3rem 3rem 0;
+    }
+    img{
+        border-radius: 5%;
+        /* background: green; */
+    }
+}
+footer {
+    /* background: green;  */
+    width: fit-content;
+    display: flex;
+    margin: 0 3rem;
+    padding: 0 var(--main-padding, 0);
+    border-top-style: solid;
+    border-color: white;
+    justify-self: center;
+}
+footer ul {
+    /* background: red; */
+    gap: var(--main-padding, 0);  
+}
+footer a{
+    /* background: green; */
+    text-decoration-line: underline;
+    text-decoration-color: var(--third-color, darkgreen);
+}
+
+      
+
+@media screen and (max-width: 850px){
+    header nav{
+        display:flex;
+        flex-direction: column;
+        position: relative;
+    }
+    #logo{
+        width: 100%;
+    }
+    #logo label{
+        display:block;
+        cursor: pointer;
+        position:relative;
+        width: 30px;
+        height: 30px;
+    }
+    #logo label::before{
+        position:absolute;
+        content: "menu";
+        font-family: 'Material Icons';
+        top: 0;
+        left: 0;
+        font-size: 30px;
+    }
+    header nav ul{
+        position: fixed;
+        inset: 0;              
+        width: 100dvw;
+        height: 100dvh;
+        margin: 0;
+        padding: 0;
+        background: rgb(0, 20, 50);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease; 
+    }
+    header li{
+        width: 50%;
+        text-align: center;
+    }
+    header a{
+        display: block;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        font-size: 18px;
+    }
+    #menu:checked ~ ul{
+        max-height: 100%;
+    }
+    #menu:checked ~ #logo label::before{
+        content:"close";
+    }
+
+    /* About page */
+    #about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #about profile-card{
+        width: fit-content;
+    }
+    #about figure{
+        margin: 0 var(--main-padding, 0);
+        padding: 0 var(--main-padding, 0);
+        height: 40dvh;
+        /* background: green; */
+        /* align-items: center; */
+    }
+    #about figcaption{
+        text-align: center;
+    }
+    #about picture{
+        width: 250px;
+        height: 200px;
+    }
+
+    /* skills page */
+    #skills{
+        display: flex;
+        flex-direction: column;
+    }
+    #skills h2{
+        font-size: 4dvw;
+    }
+    #skills h3{
+        font-size: 3dvw;
+    }
+    #skills #language-proficiency{
+        /* background:red; */
+        margin: 0 0 4rem;
+    }
+
+    /* education page */
+    #education{
+        /* background: blue; */
+        display: flex;
+        flex-direction: column;
+    }
+    #education div{
+        display:flex;
+        flex-direction: column;
+    }
+    #education img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* projects page */
+@media screen and (max-width: 890px){
+    #projects{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #projects iframe{
+        width: 450px;
+    }
+}
+@media screen and (max-width: 650px){
+    #projects iframe{
+        width: 300px;
+    }
+
+    /* contact page */
+    footer nav ul{
+        /* background: red; */
+        flex-wrap: wrap;
+    }
+}
+
+/* contact page */
+@media screen and (max-width: 740px){
+    #contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* justify-content: center; */
+    }
+    #contact header{
+        /* background: green; */
+        margin: var(--main-padding, 0);
+    }
+    #contact picture{
+        /* background: green; */
+        margin: var(--main-padding, 0) 0 3rem;
+        height: 220px;
+        width: 220px;
+    }
+}
+
+
+/* Education page */
+#education{
+    /* background: red; */
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto 1fr;
+    place-items: center;
+    text-align: center;
+
+}
+#education header{
+    /* background: blue; */
+    grid-row: 1/2;
+    grid-column: 1/3;
+    margin: 0;
+    /* align-self: start; */
+}
+@scope (#education){
+    article{
+        /* background: red; */
+        grid-column: 1/3;
+    }
+    article a{
+        background: red;
+        padding: 0;
+    } 
+    div{
+        border: 4px solid var(--second-color, lightblue);
+        border-radius: 10mm;
+        display: flex;
+        direction: rtl;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding: var(--main-padding, 0);
+        img{
+           height: 200px;
+           width: 200px;
+           margin-left: var(--main-padding, 0);
+           direction: ltr;
+        }
+    }
+    div:hover{
+        /* display: block; */
+        transform: scale(1.05);
+        background: var(--second-color, lightblue);
+    }
+    div:hover h2{
+        color: var(--main-color, blue);
+    }
+}
+
+@media screen and (max-width:500px){
+    #profile-image img{
+        /* background: red; */
+        width: 200px;
+        height: 200px;
+    }
+}
+
+  
