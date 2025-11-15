@@ -24,25 +24,30 @@ function flashField(field) {
 
 nameField.addEventListener("input", () => {
     const allowed = /^[A-Za-z ]*$/;
+    const currentChar = nameField.value.slice(-1);
 
     if (!allowed.test(nameField.value)) {
-        showError("Illegal character! Only letters and spaces allowed.");
+        showError(`Illegal character: "${currentChar}" (Only letters and spaces allowed)`);
         flashField(nameField);
 
         nameField.value = nameField.value.replace(/[^A-Za-z ]/g, "");
     }
 });
 
+let oldEmailValue = "";
 emailField.addEventListener("input", () => {
-    const allowed = /^[A-Za-z0-9@._-]*$/;
+    const newValue = emailField.value;
+    const illegalChars = newValue.replace(/[A-Za-z0-9@._-]/g, "");
 
-    if (!allowed.test(emailField.value)) {
-        showError("Illegal character for email.");
+    if (illegalChars.length > 0) {
+        const badChar = illegalChars[0];
+        showError(`Illegal email character: "${badChar}".`);
         flashField(emailField);
-
-        emailField.value = emailField.value.replace(/[^A-Za-z0-9@._-]/g, "");
+        emailField.value = newValue.replace(/[^A-Za-z0-9@._-]/g, "");
     }
+    oldEmailValue = emailField.value;
 });
+
 
 commentsField.addEventListener("input", () => {
     const remaining = commentsField.maxLength - commentsField.value.length;
