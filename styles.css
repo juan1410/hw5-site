@@ -230,7 +230,7 @@ main header{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    height: 100dvh;
+    /* height: 100dvh; */
 }
 #skills header{
     grid-row: 1/2;
@@ -792,12 +792,19 @@ select:optional {
 
 
 /* styled toogle switch for theme */
+.switch{
+    display: none;
+}
+.js .switch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+}
 .theme-switch {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
     width: 80px;
     height: 30px;
+    position:relative;
     font-family: sans-serif;
 }
 
@@ -849,4 +856,3 @@ input:checked + .slider::before {
     transform: translateX(40px);
     content: "Light";
 }
-
