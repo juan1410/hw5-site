@@ -12,7 +12,7 @@
           border: 2px solid black;
         }
     </style> -->
-    <style>
+    <!-- <style>
         ::view-transition-old(root) {
         animation: fadeOut 0.5s ease forwards;
         }
@@ -28,7 +28,7 @@
         from { opacity: 0; }
         to   { opacity: 1; }
         }
-    </style>
+    </style> -->
 
 
 </head>
@@ -36,6 +36,36 @@
 <body>
     <script>
         document.documentElement.classList.add('js');
+        // if (document.startViewTransition) {
+        // document.querySelectorAll("a[href]").forEach((link) => {
+        //     link.addEventListener("click", (e) => {
+        //         e.preventDefault();
+        //         document.startViewTransition(() => {
+        //             window.location = link.href;
+        //         });
+        //     });
+        // });
+        // }
+        // if (document.startViewTransition) {
+        //     document.querySelectorAll("a[href]").forEach(link => {
+        //         link.addEventListener("click", e => {
+        //         const url = link.href;
+        //         if (!url.startsWith(location.origin)) return;
+
+        //         e.preventDefault();
+
+        //         const needsReload = url === window.location.href;
+
+        //         document.startViewTransition(() => {
+        //             if (needsReload) {
+        //             window.location.reload();  // forces transition to run
+        //             } else {
+        //             window.location.href = url;
+        //             }
+        //         });
+        //         });
+        //     });
+        // }
     </script>
 
     <header id="nav-bar">
@@ -98,7 +128,7 @@
     </footer>
 
     <script src="theme.js"></script>
-    <script>
+    <!-- <script>
         if (document.startViewTransition) {
         document.querySelectorAll("a[href]").forEach((link) => {
             link.addEventListener("click", (e) => {
@@ -109,7 +139,7 @@
             });
         });
         }
-    </script>
+    </script> -->
 
 </body>
 </html>

@@ -86,18 +86,44 @@
     </footer>
 
     <script src="theme.js"></script>
-    <script>
+    <!-- <script>
         if (document.startViewTransition) {
-        document.querySelectorAll("a[href]").forEach((link) => {
-            link.addEventListener("click", (e) => {
-            e.preventDefault();
-            document.startViewTransition(() => {
-                window.location = link.href;
+            document.querySelectorAll("a[href]").forEach(link => {
+                link.addEventListener("click", e => {
+                const url = link.href;
+                if (!url.startsWith(location.origin)) return;
+
+                e.preventDefault();
+
+                const needsReload = url === window.location.href;
+
+                document.startViewTransition(() => {
+                    if (needsReload) {
+                    window.location.reload();  // forces transition to run
+                    } else {
+                    window.location.href = url;
+                    }
+                });
+                });
             });
-            });
-        });
         }
-    </script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (document.startViewTransition) {
+                document.querySelectorAll("a[href]").forEach(link => {
+                link.addEventListener("click", e => {
+                    const url = link.href;
+                    if (!url.startsWith(location.origin)) return;
+
+                    e.preventDefault();
+                    document.startViewTransition(() => {
+                    window.location.href = url;
+                    });
+                });
+                });
+            }
+        });
+
+    </script> -->
 
     <!-- <script src="transition.js"></script> -->
 

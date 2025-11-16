@@ -12,6 +12,51 @@
     --second-color: color(display-p3 0.70 0.88 0.98);            
     --third-color: color-mix(in srgb, green 70%, black 30%);
 }
+/* Enable MPA view transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* Tell the browser what to transition */
+body {
+  view-transition-name: page-transition;
+}
+
+/* Add animations for the outgoing (old) and incoming (new) pages */
+/* Slide Page Transition: moves out to the left and next page in from the right */
+::view-transition-old(page-transition) {
+  animation: slide-out 0.6s ease forwards;
+}
+
+::view-transition-new(page-transition) {
+  animation: slide-in 0.6s ease forwards;
+}
+
+/* Animation keyframes */
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0.6;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 
 /* created light mode */
 [data-theme="light"] {
