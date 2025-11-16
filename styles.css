@@ -7,22 +7,33 @@
 
 :root {
     --main-padding: 1rem;
-    --main-font: 'Merriweather';   /*custom font imported */
-    --second-color: color(display-p3 0.70 0.88 0.98);                /* custom color using wider gamut color */
+    --main-font: 'Merriweather';  
+    --theme-text: white;
+    --second-color: color(display-p3 0.70 0.88 0.98);            
     --third-color: color-mix(in srgb, green 70%, black 30%);
-  }
+}
+
+/* created light mode */
+[data-theme="light"] {
+    --main-color: rgb(216, 236, 242);
+    --theme-text: rgb(75, 90, 105);
+    --second-color: rgb(0, 20, 50);
+    --third-color: color-mix(in srgb, green 35%, black 5%);
+}
+
 
 /* CSS animation */
 @keyframes fadeInDown {
-from {
-    opacity: 0;
-    transform: translateY(-50px);
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
-}
+
 main,footer{
     animation: fadeInDown 1s ease-in-out;
 }
@@ -31,28 +42,28 @@ html{
 }
 #nav-bar{
     /* background: green; */
-    padding: 0 var(--main-padding, 0); 
-    border-bottom-color: white; 
+    padding: 0 var(--main-padding, 0);
+    border-bottom-color: var(--theme-text);
     border-bottom-style: solid;
 }
 body{
-    /* background: red; */
+    /* background: red; */    
     font-family: serif;
     margin: 0;
     padding: 0;
 }
 p{
-    color:rgb(161, 158, 158);
-    font-family: var(--fallback-font);
+    color:var(--theme-text);
 }
 h1, h2, h3{
-    color: lightgrey;
-    font-family: var(--main-font, var(--fallback-font));
+    color:var(--theme-text);
+    font-family: var(--main-font);
 }
+
 a{
     /* background: red; */
     text-decoration: none;
-    color: white;
+    color: var(--theme-text);
     font-weight: 600;
     width: 100px;
     padding: 16px;
@@ -66,7 +77,6 @@ a:hover{
 ul, ol{
     list-style:none;
     /* transition: color 10s ease; */
-
 }
 img{
     background: var(--third-color, darkgreen);
@@ -201,7 +211,7 @@ main header{
     }
     #about-image figcaption{
         /* background: green; */
-        color: white;
+        color: var(--theme-text);
         font-size: 20px;
         padding: var(--main-padding, 0) 0;
         margin: 0.5rem 0;
@@ -244,7 +254,7 @@ main header{
         /* background:red; */
         text-align: center;
         margin: 0 0 4rem;
-        color: lightgrey;
+        color: var(--theme-text);
         
         ul{
             /* background: green; */
@@ -315,10 +325,9 @@ main header{
             /* object-fit: cover; */
         }
         figcaption{
-            color:lightgrey;
+            color:var(--theme-text);
         }
     }
-
 }
 
 
@@ -355,19 +364,19 @@ main header{
     }
     article p{
         /* background: red; */
-        color: white;
+        color: var(--theme-text);
     }
     article:hover{
         transform: scale(1.05); 
         display:block;
         background: var(--second-color, lightblue);
-        color: black;
+        /* color: var(--main-color); */
     }
     article:hover h3{
-        color: rgb(0, 20, 50);
+        color: var(--main-color);
     }
     article:hover p{
-        color: rgb(0, 20, 50);
+        color: var(--main-color);
     }
 }
 
@@ -399,11 +408,10 @@ main header{
         margin-bottom: 2rem;
         padding: 0.5rem;
         width: fit-content;
-        /* display: flex; */
         justify-self: center;
         border-radius: 1mm;
         border-color: var(--second-color, lightblue);
-        color: white;
+        color: var(--theme-text);
     }
     button:hover{
         background: var(--second-color, lightblue);
@@ -419,21 +427,24 @@ main header{
         /* background: green; */
     }
 }
-footer {
+#contact-footer {
     /* background: green;  */
+    background: var(--main-color);
+    color: var(--theme-text);
+
     width: fit-content;
     display: flex;
     margin: 0 3rem;
     padding: 0 var(--main-padding, 0);
     border-top-style: solid;
-    border-color: white;
+    border-color: var(--theme-text);
     justify-self: center;
 }
-footer ul {
+#contact-footer ul {
     /* background: red; */
     gap: var(--main-padding, 0);  
 }
-footer a{
+#contact-footer a{
     /* background: green; */
     text-decoration-line: underline;
     text-decoration-color: var(--third-color, darkgreen);
@@ -461,6 +472,7 @@ footer a{
         position:absolute;
         content: "menu";
         font-family: 'Material Icons';
+        color: var(--theme-text);
         top: 0;
         left: 0;
         font-size: 30px;
@@ -472,7 +484,7 @@ footer a{
         height: 100dvh;
         margin: 0;
         padding: 0;
-        background: rgb(0, 20, 50);
+        background: var(--main-color);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -572,7 +584,7 @@ footer a{
     }
 
     /* contact page */
-    footer nav ul{
+    #contact-footer nav ul{
         /* background: red; */
         flex-wrap: wrap;
     }
@@ -776,3 +788,65 @@ select:optional {
     font-style: italic;
     color: #525151;
 }
+
+
+
+/* styled toogle switch for theme */
+.theme-switch {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    width: 80px;
+    height: 30px;
+    font-family: sans-serif;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: #666;
+    border-radius: 30px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+.slider::before {
+    content: "Dark";
+    position: absolute;
+    height: 24px;
+    width: 35px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+input:checked + .slider {
+    background-color: #6ca2c2;
+}
+
+input:checked + .slider::before {
+    transform: translateX(40px);
+    content: "Light";
+}
+

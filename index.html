@@ -62,12 +62,29 @@
         }
         customElements.define('hello-world', HelloWorld);
     </script>
-
-    <script src="myscript.js"></script>
-
+<!-- 
     <noscript>
         <p>Certain script type on page is not supported</p>
-    </noscript>
+    </noscript> -->
+
+    <footer>
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+
+        <noscript>
+            <p style="color:red; font-weight:bold;">
+                Theme toggle requires JavaScript to function.
+            </p>
+        </noscript>
+    </footer>
+
+    <script src="theme.js"></script>
+
+</body>
+</html>
+
 
 </body>
 </html>
