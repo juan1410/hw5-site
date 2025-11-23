@@ -46,7 +46,6 @@
             <ul class="items">
                 <li><a href="about.html">About</a></li>
                 <li><a href="skills.html">Skills</a></li>
-                <!-- <li><a href="achievements.html">Achievements</a></li> -->
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -61,7 +60,7 @@
                 <h2>Overview of My Work</h2>
             </header>
 
-            <article>
+            <!-- <article>
                 <iframe src="https://elaborate-douhua-a3502b.netlify.app/" width="400" height="250" title="Project 1 Preview"></iframe>
                 <h3>Personal Website</h3>
                 <p>Currently in progress</p>
@@ -80,30 +79,36 @@
                     View Project:
                     <a href="https://_blank.com" target="_blank">→</a>
                 </p>
-            </article>
- 
- 
-            <!-- <article>
-                <iframe src="https://project3.com" width="400" height="250" title="Project 1 Preview"></iframe>
-                <h3>Project 3 Name</h3>
-                <p>Short description of project 3</p>
-                <p>
-                    View Project:
-                    <a href="https://project3.com" target="_blank">→</a>
-                </p>
-            </article>
- 
- 
-            <article>
-                <iframe src="https://project4.com" width="400" height="250" title="Project 1 Preview"></iframe>
-                <h3>Project 4 Name</h3>
-                <p>Short description of project 4</p>       
-                <p>
-                    View Project:
-                    <a href="https://project4.com" target="_blank">→</a>
-                </p>
             </article> -->
- 
+
+            <project-card>
+                <picture slot="image">
+                    <img src="about-image1.JPG" alt="Portfolio preview">
+                </picture>
+
+                <h2 slot="title">Personal Website</h2>
+
+                <p slot="description">
+                    A responsive portfolio built with HTML, CSS, and JavaScript.
+                </p>
+
+                <a slot="link" href="https://hw5-site.pages.dev/"></a>
+            </project-card>
+
+
+            <project-card>
+                <picture slot="image">
+                    <img src="smartdoor.jpg" alt="Smart Door Project">
+                </picture>
+
+                <h2 slot="title">Smart Door Project</h2>
+
+                <p slot="description">
+                    A Raspberry Pi + Galaxy Watch system that unlocks a servo-controlled door.
+                </p>
+
+                <a slot="link" href="https://github.com/juan/smart-door"></a>
+            </project-card>
 
         </section>
     </main>
@@ -118,6 +123,7 @@
     </footer>
 
     <script src="theme.js"></script>
+    <script src="project-card.js"></script>
     <script>
         const menuCheckbox = document.getElementById("menu");
 
