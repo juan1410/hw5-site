@@ -504,13 +504,24 @@ main header{
     #projects iframe{
         width: 450px;
     }
+    #projects img{
+        width: 450px;
+    }
 }
 @media screen and (max-width: 650px){
     #projects iframe{
         width: 300px;
     }
 
+    #projects img{
+        width: 300px;
+    }
+
     #contact-footer nav ul{
+        flex-wrap: wrap;
+    }
+
+    #projects p{
         flex-wrap: wrap;
     }
 }
@@ -765,3 +776,22 @@ input:checked + .slider::before {
 
 
 
+/* project-card */
+project-card {
+    display: block;
+    margin: 0 0.5rem;
+    width: auto;
+    justify-items: center;
+    /* background: red; */
+}
+
+project-card img{
+    width: 400px;
+    height: 250px; 
+}
+
+project-card p{
+    /* background: red; */
+    /* padding: 1rem; */
+    margin: 1rem;
+}
