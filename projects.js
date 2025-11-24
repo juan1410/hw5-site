@@ -14,7 +14,9 @@ const localData = [
         "link": "https://github.com/juan1410/smart-door"
     }
 ];
-localStorage.setItem("project-cards", JSON.stringify(localData));
+if (!localStorage.getItem("project-cards")) {
+    localStorage.setItem("project-cards", JSON.stringify(localData));
+}
 
 function showProjects(data) {
     const container = document.getElementById("project-cards");
