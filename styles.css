@@ -607,7 +607,8 @@ main header{
 
 
 /* form-no-js styling */
-.contact{
+.contact, 
+.crud-section {
     /* background: red; */
     max-width: 600px;
     margin: 4rem auto;
@@ -617,7 +618,8 @@ main header{
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.contact legend{ 
+.contact legend,
+.crud-section legend{ 
     color: var(--theme-text);
     text-align: center;
     margin-top: 0;
@@ -626,11 +628,15 @@ main header{
     font-weight: 600;
 }
 
-.contact fieldset{
+.contact fieldset,
+.crud-section fieldset{
     border: none;
 }
 
-.contact-form{
+.contact-form,
+.create-form,
+.update-form,
+.delete-form{
     display: flex;
     flex-direction: column;
 }
@@ -832,3 +838,17 @@ project-card p{
     transform: scale(1.05);
 }
 
+
+/* crud page */
+#crud-page h1{
+    /* background: red; */
+    justify-self:center;
+    margin-top: 1rem;
+}
+#crud-page a{
+    font-size: 25px;
+    display: block;
+    justify-self: center;
+    text-align: center;
+    margin-top: 1rem;
+}
