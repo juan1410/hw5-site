@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         @view-transition {
             navigation: auto;
         }
@@ -28,7 +28,7 @@
             from { transform: translateX(100%); }
             to   { transform: translateX(0); }
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -60,6 +60,11 @@
                 <h2>Overview of My Work</h2>
             </header>
 
+            <button id="load-local">Load Local</button>
+            <button id="load-remote">Load Remote</button>
+
+            <div id="project-cards"></div>
+
             <!-- <article>
                 <iframe src="https://elaborate-douhua-a3502b.netlify.app/" width="400" height="250" title="Project 1 Preview"></iframe>
                 <h3>Personal Website</h3>
@@ -81,7 +86,7 @@
                 </p>
             </article> -->
 
-            <project-card>
+            <!-- <project-card>
                 <h2 slot="title">Personal Website</h2>
 
                 <p slot="description">
@@ -100,16 +105,16 @@
                 <h2 slot="title">Smart Door Project</h2>
 
                 <p slot="description">
-                    A Raspberry Pi + Galaxy Watch system that unlocks a servo-controlled door.
+                    A Raspberry Pi + Galaxy Watch system that unlocks a servo-controlled door (Currently in Progress).
                 </p>
 
                 <picture slot="image">
-                    <img src="smartdoor.jpg" alt="Smart Door Project">
+                    <img src="smartdoor.jpg" alt="Preview of Smart Door Project">
                 </picture>
 
-                <a slot="link" href="https://github.com/juan/smart-door"></a>
+                <a slot="link" href="https://github.com/juan1410/smart-door"></a>
         
-            </project-card>
+            </project-card> -->
 
         </section>
     </main>

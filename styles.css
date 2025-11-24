@@ -779,10 +779,9 @@ input:checked + .slider::before {
 /* project-card */
 project-card {
     display: block;
-    margin: 0 0.5rem;
-    width: auto;
-    justify-items: center;
+    /* margin: 0 0.5rem; */
     /* background: red; */
+    justify-self: center;
 }
 
 project-card img{
@@ -792,6 +791,6 @@ project-card img{
 
 project-card p{
     /* background: red; */
-    /* padding: 1rem; */
+    padding: 0 1rem;
     margin: 1rem;
 }

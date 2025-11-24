@@ -16,6 +16,7 @@ class ProjectCard extends HTMLElement {
                     margin: var(--main-padding, 0) 0 2rem;
                     padding: 0.5rem;
                     max-width: 400px;
+                    // max-height: 380px;
                     transition: transform 0.2s, filter 0.2s;
                     text-decoration: none;
                 }
