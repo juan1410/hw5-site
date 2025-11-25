@@ -167,6 +167,12 @@ main header{
         color: white;
         height: fit-content;
         width: 50dvw;
+        h2{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
     }
     figure{
         grid-column: 2/3;
@@ -452,8 +458,15 @@ main header{
     }
     #about profile-card{
         width: fit-content;
+        h2{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
     }
     #about figure{
+        /* background: red; */
         margin: 0 var(--main-padding, 0);
         padding: 0 var(--main-padding, 0);
         height: 40dvh;
@@ -462,6 +475,7 @@ main header{
         text-align: center;
     }
     #about picture{
+        justify-self: center;
         width: 250px;
         height: 200px;
     }
