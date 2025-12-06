@@ -22,6 +22,7 @@
 
 html{
     background: var(--main-color, blue);
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 .menu-open main {
     view-transition-name: none;
@@ -882,4 +883,34 @@ project-card p{
     justify-self: center;
     text-align: center;
     margin-top: 1rem;
+}
+
+
+
+
+/* dialog for contact page*/
+#contact-dialog{
+    background: var(--main-color);
+    border: 4px solid var(--second-color);
+    border-radius: 10px;
+    color: var(--theme-text);
+}
+
+#contact-dialog legend{
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contact-field{
+    display: flex;
+    flex-direction: column;
+    width: 50dvw; 
+    gap: 0.5rem;
+}
+
+.buttons{
+    display: flex;
 }
