@@ -218,10 +218,12 @@ main header{
     h3{
         font-size: 1.5dvw;
     }
+
     div:has(ul){               
         text-align: center;
         margin: 0 0 4rem;
         color: var(--theme-text);
+        /* border-left: solid; */
         
         ul{
             display: flex;
