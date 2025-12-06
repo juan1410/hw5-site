@@ -8,10 +8,10 @@ const localData = [
     },
     {
         "title": "Smart Door Watch",
-        "image": "door.jpg",
-        "alt": "Smart Door Project preview",
+        "image": "smartwatch.JPG",
+        "alt": "Smart Door Project previe",
         "description": "A prototype using a Raspberry Pi and Galaxy Watch to unlock a servo-controlled door (Currently in Progress).",
-        "link": "https://github.com/juan1410/smart-door"
+        "link": "https://github.com/jar04/UCSD-CSE-118-Team-8"
     }
 ];
 if (!localStorage.getItem("project-cards")) {
