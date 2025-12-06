@@ -66,25 +66,32 @@
             <img src="contact-image.JPG" alt="Photo of Me">
         </picture>
 
-        <button type="button">Contact Me</button>
+        <button id="open-dialog">Contact Me</button>
 
-        <dialog>
-          <form method="dialog">
-            <fieldset>
+        <dialog id="contact-dialog">
+          <form method="dialog" class="contact-form">
+            <fieldset class="contact-field">
               <legend>Send a Message</legend>
-              
-              <label for="name">Your Name:</label><br>
-              <input type="text" id="name" name="name" placeholder="Enter name"><br><br>
-              
-              <label for="email">Your Email:</label><br>
-              <input type="email" id="email" name="email" placeholder="Enter email"><br><br>
-              
-              <label for="message">Your Message:</label><br>
-              <textarea id="message" name="message" rows="5" cols="30" placeholder="Enter message"></textarea><br><br>
-              
-              <button type="submit">Send</button>
-              <button type="button">Close</button>
+
+              <div class="form-field">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter name">
+              </div>
+
+              <div class="form-field">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email">         
+              </div>
+      
+              <div class="form-field">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" cols="30" placeholder="Enter message"></textarea>
+              </div>
             </fieldset>
+            <div class="buttons">
+              <button type="submit">Send</button>
+              <button type="button" id="close-dialog">Cancel</button>  
+            </div>
           </form>
         </dialog>
 
@@ -96,11 +103,11 @@
       <p>Juan Perez</p>
       <nav>
         <ul>
-          <li><a href="tel:+12132655895">Phone</a></li>
-          <li><a href="mailto:juanph.1404@gmail.com">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/juan-perez-1a2382391" target="_blank">LinkedIn</a></li>
-          <li><a href="https://github.com/juan1410" target="_blank">GitHub</a></li>
-          <li><a href="https://instagram.com/juan.p_14" target="_blank">Instagram</a></li>
+          <li><a href="tel:+12132655895"><span class="material-icons">phone</span></a></li>
+          <li><a href="mailto:juanph.1404@gmail.com"><span class="material-icons">mail</span></a></li>
+          <li><a href="https://www.linkedin.com/in/juan-perez-1a2382391" target="_blank"><span class="material-icons">badge</span>></a></li>
+          <li><a href="https://github.com/juan1410" target="_blank"><span class="material-icons">code</span></a></li>
+          <li><a href="https://instagram.com/juan.p_14" target="_blank"><span class="material-icons">photo_camera</span></a></li>
         </ul>
       </nav>
     </section>
@@ -120,6 +127,15 @@
       menuCheckbox.addEventListener("change", () => {
           document.documentElement.classList.toggle("menu-open", menuCheckbox.checked);
       });
+  </script>
+ac
+  <script>
+      const dialog = document.getElementById("contact-dialog");
+      const openButton = document.getElementById("open-dialog");
+      const closeButton = document.getElementById("close-dialog");
+
+      openButton.addEventListener("click", () => dialog.showModal());
+      closeButton.addEventListener("click", () => dialog.close());
   </script>
   
 </body>

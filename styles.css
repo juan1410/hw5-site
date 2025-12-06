@@ -155,6 +155,7 @@ main header{
 }
 @scope (#about){
     header{
+        /* background: red; */
         grid-column: 1/2;
         grid-row: 1/2;
     }
@@ -454,7 +455,12 @@ main header{
     #about {
         display: flex;
         flex-direction: column;
+        /* gap: 0; */
         align-items: center;
+    }
+    #about header{
+        /* background: red; */
+        margin: 1rem;
     }
     #about profile-card{
         width: fit-content;
@@ -643,8 +649,7 @@ main header{
     font-weight: 600;
 }
 
-.contact fieldset,
-.crud-section fieldset{
+fieldset{
     border: none;
 }
 
@@ -652,11 +657,13 @@ main header{
 .create-form,
 .update-form,
 .delete-form{
+    /* background:red; */
     display: flex;
     flex-direction: column;
 }
 
 .form-field {
+    /* background: red; */
     color: var(--theme-text);
     display: flex;
     flex-direction: column;
@@ -678,8 +685,8 @@ input, select, textarea {
     font-weight: 600;
 }
 
-button[type="submit"] {
-    align-self: flex-end;
+button[type="submit"],
+button[type="button"] {
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
     border: 5px solid var(--second-color);
@@ -689,9 +696,17 @@ button[type="submit"] {
     color: var(--second-color);
     font-size: 20px;
     font-weight: 600;
+    margin: 1rem;
+    margin-top: 0;
 }
 
-button[type="submit"]:hover {
+#close-dialog{
+    margin-left: auto;
+}
+
+
+button[type="submit"]:hover,
+button[type="button"]:hover{
     filter: brightness(1.05);
     background: var(--second-color);
     color: var(--main-color);
